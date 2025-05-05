@@ -1,12 +1,15 @@
+#eksctl will be used to create the kubenetes cluster in AWS with required number of nodes and its type
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
-
 metadata:
   name: expense-1
   region: us-east-1
-
 managedNodeGroups:
 - name: expense
   instanceType: m5.large
   desiredCapacity: 3 #3 nodes are created in eks cluster of aws
   spot: true
+
+#create an ec2 instance called workstation, run the below commands to install docker,eksctl,kubectl,helm
+#$ sudo sh workstation.sh
+#$ aws configure
